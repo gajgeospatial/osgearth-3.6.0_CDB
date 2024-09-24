@@ -1,0 +1,64 @@
+<!--
+osgEarth Sample
+
+This demonstrates how to use the OGR feature driver to define inline feature geometry.
+
+You can define an inline geometry in WKT format.
+* See: http://en.wikipedia.org/wiki/Well-known_text#Geometric_objects
+
+Notice the different interpolation types for each layer, and the difference in the
+display. The options are:
+ "rhumb_line" - maintains a constant bearing between two points (default), or
+ "great_circle" - takes the shortest elliptical distance between two points.
+
+-->
+
+<map name="Inline feature geometry demo">
+
+    <GDALImage name="world">
+        <url>../data/world.tif</url>
+    </GDALImage>
+    
+    <OGRFeatures name="geometry1">
+        <geometry>
+            POLYGON((-120 30, -120 50, -70 50, -70 30))
+        </geometry>
+    </OGRFeatures>
+    
+    <OGRFeatures name="geometry2">
+        <geometry>
+            POLYGON((-68 30, -68 50, -20 50, -20 30))
+        </geometry>
+    </OGRFeatures>
+
+    <FeatureModel name="Great Circle" features="geometry1">
+        <geo_interpolation>great_circle</geo_interpolation>
+        <styles>
+            <style type="text/css">
+                default {
+                   fill: #ffff006f;
+                   stroke: #ffff00;
+                   stroke-width: 1px;
+                   stroke-tessellation-size: 100km;
+                   altitude-clamping: terrain-drape;
+                }                    
+            </style>
+        </styles>        
+    </FeatureModel>
+
+    <FeatureModel name="Rhumb Line" features="geometry2">
+        <geo_interpolation>rhumb_line</geo_interpolation>
+        <styles>
+            <style type="text/css">
+                default {
+                   fill: #ff00ff6f;
+                   stroke: #ff00ff;
+                   stroke-width: 1px;
+                   stroke-tessellation-size: 100km;
+                   altitude-clamping: terrain-drape;
+                }                    
+            </style>
+        </styles>        
+    </FeatureModel>
+
+</map>

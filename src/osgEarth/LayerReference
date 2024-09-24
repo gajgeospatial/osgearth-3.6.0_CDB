@@ -1,0 +1,212 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2020 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#pragma once
+#include <osgEarth/Map>
+
+ //! optional property macro for referencing another layer
+#define OE_OPTION_LAYER(TYPE, NAME) \
+    private: \
+        LayerReference< TYPE > _layerRef_ ## NAME ; \
+    public: \
+        LayerReference< TYPE >& NAME () { return _layerRef_ ## NAME ; } \
+        const LayerReference< TYPE >& NAME () const { return _layerRef_ ## NAME ; }
+
+namespace osgEarth
+{
+    /**
+     * Helper class for Layers that reference other layers.
+     */
+    template<typename T>
+    class LayerReference
+    {
+    public:
+        using TypedOptions = typename T::Options;
+
+        //! User can call this to set the layer by hand (instead of finding it
+        //! in the map or in an embedded options structure)
+        void setLayer(T* layer) 
+        {
+            _layer = layer;
+        }
+
+        //! Contained layer object
+        T* getLayer() const 
+        {
+            return _layer.get();
+        }
+
+        //! Whether this reference is set at all.
+        bool isSet() const
+        {
+            return _layer.valid() || _embeddedOptions || _externalLayerName.isSet();
+        }
+
+        //! Whether the user called setLayer to establish the reference
+        //! (as opposed to finding it in an embedded options or in the map)
+        bool isSetByUser() const 
+        {
+            return _layer.valid() && !_embeddedOptions && !_externalLayerName.isSet();
+        }
+
+        //! open the layer pointed to in the reference and return a status code
+        Status open(const osgDB::Options* readOptions)
+        {
+            if (_embeddedOptions)
+            {
+                auto typedLayer = Layer::create_as<T>(*_embeddedOptions.get());
+                if (typedLayer)
+                {
+                    typedLayer->setReadOptions(readOptions);
+                    const Status& layerStatus = typedLayer->open();
+                    if (layerStatus.isError())
+                    {
+                        return layerStatus;
+                    }
+                    _layer = typedLayer.get();
+                }
+            }
+            else if (_layer.valid() && !_layer->isOpen())
+            {
+                _layer->setReadOptions(readOptions);
+                const Status& layerStatus = _layer->open();
+                if (layerStatus.isError())
+                {
+                    return layerStatus;
+                }
+            }
+            return Status::OK();
+        }
+
+        void close()
+        {
+            _layer = NULL;
+        }
+
+        //! Find a layer in the map and set this reference to point at it 
+        void addedToMap(const Map* map)
+        {
+            if (!getLayer() && _externalLayerName.isSet())
+            {
+                T* layer = map->getLayerByName<T>(_externalLayerName.get());
+                if (layer)
+                {
+                    _layer = layer;
+
+                    if (!layer->isOpen())
+                    {
+                        layer->open();
+                    }
+                }
+            }
+            else if (getLayer() && _embeddedOptions)
+            {
+                _layer->addedToMap(map);
+            }
+        }
+
+        //! If this reference was set by findInMap, release it.
+        void removedFromMap(const Map* map)
+        {
+            if (map && _layer.valid())
+            {
+                if (_embeddedOptions)
+                {
+                    _layer->removedFromMap(map);
+                }
+
+                // Do not set _layer to nullptr. It may still be in use
+                // and this is none of the Map's business.
+            }
+        }
+
+        //! Get the layer ref from either a name or embedded option
+        void get(const Config& conf, const std::string& tag)
+        {
+            // first try to store the name of another layer:
+            conf.get(tag, _externalLayerName);
+
+            if (!_externalLayerName.isSet())
+            {
+                // next try to find a child called (tag) and try to make the layer
+                // from it's children:
+                if (conf.hasChild(tag) && conf.child(tag).children().size() >= 1)
+                {
+                    const Config& tag_content = *conf.child(tag).children().begin();
+                    {
+                        auto layer = Layer::create_as<T>(tag_content);
+                        if (layer.valid())
+                        {
+                            _embeddedOptions = std::make_shared<TypedOptions>(tag_content);
+                        }
+                    }
+                }
+
+                // failing that, try each child of the config.
+                if (!_embeddedOptions)
+                {
+                    for(auto& child_conf: conf.children())
+                    {
+                        auto layer = Layer::create_as<T>(child_conf);
+                        if (layer.valid())
+                        {
+                            _embeddedOptions = std::make_shared<TypedOptions>(child_conf);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        //! Set the layer ref options in the config
+        void set(Config& conf, const std::string& tag) const
+        {
+            if (_externalLayerName.isSet())
+            {
+                conf.set(tag, _externalLayerName);
+            }
+            else if (_embeddedOptions)
+            {
+                conf.set(_embeddedOptions->getConfig());
+            }
+            else if (isSetByUser()) // should be true
+            {
+                conf.add(_layer->getConfig());
+            }
+        }
+
+        const std::shared_ptr<TypedOptions>& embeddedOptions() const { return _embeddedOptions; }
+
+        void setEmbeddedOptions(const TypedOptions& value)
+        {
+            _embeddedOptions = std::make_shared<TypedOptions>(value);
+        }
+
+        const optional<std::string>& externalLayerName() const { return _externalLayerName; }
+
+        void setExternalLayerName(const std::string& value)
+        {
+            _externalLayerName = value;
+        }
+
+    private:
+        osg::ref_ptr<T> _layer;
+        optional<std::string> _externalLayerName;
+        std::shared_ptr<TypedOptions> _embeddedOptions;
+    };
+}

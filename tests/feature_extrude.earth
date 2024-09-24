@@ -1,0 +1,32 @@
+<!--
+osgEarth Sample - footprint extrusion
+-->
+
+<map name="Extrusion Demo">
+      
+    <OGRFeatures name="buildings-data">
+        <url>../data/dcbuildings.shp</url>
+        <build_spatial_index>true</build_spatial_index>
+    </OGRFeatures>
+	         
+    <FeatureModel name="buildings" features="buildings-data">
+        <styles>
+            <style type="text/css">
+                buildings {
+                    fill:              #ff7f2f;
+                    stroke:            #cf5f00;
+                    extrusion-height:  15;
+                    extrusion-flatten: true;
+                    altitude-clamping: terrain;
+                }
+            </style>
+        </styles>
+    </FeatureModel>
+    
+    <xi:include href="readymap_imagery.xml"/>
+    
+    <viewpoints home="0">
+        <viewpoint name="Zoom to Buildings" heading="12.4" lat="38.8982" long="-77.0365" height="20.67" pitch="-51.4" range="4500" />
+    </viewpoints>
+  
+</map>

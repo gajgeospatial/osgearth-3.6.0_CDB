@@ -1,0 +1,24 @@
+<!--
+osgEarth Sample
+
+Shows the skyview driver, which will flip an image source horizontally
+so that it's viewable from inside the globe, planetarium style.
+Run with osgearth_skyview skyview1.earth
+-->
+<map name="SkyView Demo">
+
+    <options>
+        <terrain>
+            <cluster_culling>false</cluster_culling>
+        </terrain>
+    </options>
+   
+    <!-- Wrap the image in the skyview driver to flip it-->
+    <SkyView>
+        <GDALImage name="Skyview">
+	        <url>../data/skyview/irasAllsky-100um.vrt</url>
+	        <profile>global-geodetic</profile>
+	    </GDALImage>
+    </SkyView>
+
+</map>

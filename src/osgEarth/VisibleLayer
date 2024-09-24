@@ -1,0 +1,130 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2020 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#pragma once
+
+#include <osgEarth/Layer>
+#include <osgEarth/Callbacks>
+
+namespace osgEarth
+{
+    enum ColorBlending
+    {
+        BLEND_INTERPOLATE,
+        BLEND_MODULATE
+    };
+}
+
+namespace osgEarth
+{
+    //! Base class for a layer supporting visibility and opacity controls.
+    class OSGEARTH_EXPORT VisibleLayer : public Layer
+    {
+    public: // serialization
+        class OSGEARTH_EXPORT Options : public Layer::Options {
+        public:
+            META_LayerOptions(osgEarth, Options, Layer::Options);
+            OE_OPTION(bool, visible, true);
+            OE_OPTION(float, opacity, 1.0f);
+            OE_OPTION(float, minVisibleRange, 0.0f);
+            OE_OPTION(float, maxVisibleRange, FLT_MAX);
+            OE_OPTION(float, attenuationRange, 0.0f);
+            OE_OPTION(ColorBlending, blend, BLEND_INTERPOLATE);
+            OE_OPTION(osg::Node::NodeMask, mask, 0xffffffff);
+            OE_OPTION(bool, debugView, false);
+            OE_OPTION(bool, useNVGL, false);
+            virtual Config getConfig() const;
+        private:
+            void fromConfig(const Config& conf);
+        };
+
+    public:
+        META_Layer(osgEarth, VisibleLayer, Options, Layer, VisibleLayer);
+
+    protected:
+        virtual ~VisibleLayer();
+
+    public:
+        //! Whether to draw this layer.
+        void setVisible(bool value);
+        bool getVisible() const;
+
+        //! Opacity with which to draw this layer
+        virtual void setOpacity(float value);
+        float getOpacity() const;
+
+        //! Minimum camera range at which this image layer is visible (if supported)
+        float getMinVisibleRange() const;
+        void setMinVisibleRange( float minVisibleRange );
+
+        //! Maximum camera range at which this image layer is visible (if supported)
+        float getMaxVisibleRange() const;
+        void setMaxVisibleRange( float maxVisibleRange );
+
+        //! Distance (m) over which to ramp min and max range blending
+        float getAttenuationRange() const;
+        void setAttenuationRange( float value );
+
+        //! Blending mode to apply when rendering this layer
+        void setColorBlending(ColorBlending value);
+        ColorBlending getColorBlending() const;
+
+        //! The node mask to apply to the layer when rendering.  This works exactly like the node mask would on a node.
+        osg::Node::NodeMask getMask() const;
+        void setMask(osg::Node::NodeMask mask);
+
+        //! Gets/Sets the default mask to use for VisibleLayers.  Default is 0xffffffff.  Set this very early on your application to make all VisibleLayers have this mask by default.
+        static osg::Node::NodeMask getDefaultMask();
+        static void setDefaultMask(osg::Node::NodeMask mask);
+
+        //! Enables/disables a debug view for this layer, if available.
+        void setEnableDebugView(bool value);
+        bool getEnableDebugView() const;
+
+    public: // callbacks
+
+        Callback<void(const VisibleLayer*)> onVisibleChanged;
+        Callback<void(const VisibleLayer*)> onVisibleRangeChanged;
+        Callback<void(const VisibleLayer*)> onOpacityChanged;
+
+    public: // Layer
+
+        virtual Status openImplementation() override;
+
+    protected: // Layer
+
+        virtual void init() override;
+
+        virtual void prepareForRendering(TerrainEngine*) override;
+
+        bool _visibleTiedToOpen = false;
+        bool _canSetVisible = true;
+
+    private:
+        osg::ref_ptr<osg::Uniform> _opacityU;
+        osg::ref_ptr<osg::Uniform> _rangeU;
+        osg::ref_ptr<osg::NodeCallback> _noDrawCallback;
+        bool _minMaxRangeShaderAdded;
+        void initializeUniforms();
+        void initializeMinMaxRangeShader();
+        void updateNodeMasks();
+    };
+
+    using VisibleLayerVector = std::vector<osg::ref_ptr<VisibleLayer>>;
+
+} // namespace osgEarth

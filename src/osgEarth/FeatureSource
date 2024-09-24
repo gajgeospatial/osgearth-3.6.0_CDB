@@ -1,0 +1,199 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2020 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#pragma once
+
+#include <osgEarth/Filter>
+#include <osgEarth/FeatureCursor>
+#include <osgEarth/Layer>
+
+namespace osgEarth
+{
+    class Query;
+
+    /**
+     * Layer that provides raw feature data.
+     */
+    class OSGEARTH_EXPORT FeatureSource : public Layer
+    {
+    public: // serialization
+        class OSGEARTH_EXPORT Options : public Layer::Options
+        {
+        public:
+            META_LayerOptions(osgEarth, Options, Layer::Options);
+            OE_OPTION(bool, openWrite, false);
+            OE_OPTION(ProfileOptions, profile);
+            OE_OPTION(GeoInterpolation, geoInterp);
+            OE_OPTION(std::string, fidAttribute);
+            OE_OPTION(bool, rewindPolygons, true);
+            OE_OPTION(std::string, vdatum);
+            OE_OPTION_VECTOR(ConfigOptions, filters);
+            virtual Config getConfig() const;
+        private:
+            void fromConfig(const Config& conf);
+        };
+
+    public:
+        META_Layer_Abstract(osgEarth, FeatureSource, Options, Layer);
+
+        //! Open the source in a writable mode, if supported
+        void setOpenWrite(const bool& value);
+        const bool& getOpenWrite() const;
+
+        //! Set the geo-interpolation method to use if applicable
+        void setGeoInterpolation(const GeoInterpolation& value);
+        const GeoInterpolation& getGeoInterpolation() const;
+
+        //! Set the name of the attribute containing the feature ID
+        void setFIDAttribute(const std::string& value);
+        const std::string& getFIDAttribute() const;
+
+        //! Sets whether to automatically rewind polygons to have the correct orientation
+        void setRewindPolygons(const bool& value);
+        const bool& getRewindPolygons() const;
+
+    public: // Layer
+
+        void init() override;
+
+        Status openImplementation() override;
+
+        //! Extents of this layer, if known
+        const GeoExtent& getExtent() const override;
+
+        //! Called when the layer is added to the Map
+        void addedToMap(const class Map*) override;
+
+        //! Marks the source as dirty and wipes any memory caches
+        void dirty() override;
+
+    public:
+
+        //! Creates a cursor that iterates over all features corresponding to the
+        //! specified Query.
+        osg::ref_ptr<FeatureCursor> createFeatureCursor(
+            const Query& query = {},
+            const FeatureFilterChain& filters = {},
+            FilterContext* context = nullptr,
+            ProgressCallback* progress = nullptr);
+
+        //! Creates and initializes a new feature source for writing
+        virtual const Status& create(
+            const FeatureProfile* profile,
+            const FeatureSchema& schema,
+            const Geometry::Type& geometryType,
+            const osgDB::Options* readOptions);
+
+        //! Gets a vector of keys required to cover the input key and
+        //! a buffering distance.
+        unsigned getKeys(
+            const TileKey& key,
+            const Distance& buffer,
+            std::unordered_set<TileKey>& output) const;
+
+        //! Gets a reference to the metadata that describes features that you can
+        //! get from this FeatureSource. A valid feature profile indiciates that the
+        //! feature source successfully initialized.
+        const FeatureProfile* getFeatureProfile() const;
+
+        //! Sets the feature profile for this source.
+        //! This is required. Usually the subclass should call this from open().
+        const FeatureProfile* setFeatureProfile(const FeatureProfile* profile);
+
+        //! Whether this FeatureSource supports inserting and deleting features
+        virtual bool isWritable() const { return false; }
+
+        //! Deletes the feature with the given FID
+        //! return True on success; false on failure or if the source is read-only
+        virtual bool deleteFeature(FeatureID fid) { return false; }
+
+        //! Gets the number of features in this FeatureSource
+        //! @return Number of features or -1 if the number of features cannot be determined.
+        virtual int getFeatureCount() const { return -1; }
+
+        //! Whether the source can look up a Feature by its ID.
+        //! @return True or False
+        virtual bool supportsGetFeature() const { return false; }
+
+        //! Gets the Feature with the given FID
+        //! @return Feature with the given FID or NULL if not found.
+        virtual Feature* getFeature( FeatureID fid ) { return 0L; }
+
+        //! Gets the FeatureSchema for this FeatureSource. If the schema doesn't
+        //! publish a source, this might be empty.
+        virtual const FeatureSchema& getSchema() const;
+
+        //! Inserts the given feature into the FeatureSource
+        //! @return  True if the feature was inserted, false if not
+        virtual bool insertFeature(Feature* feature) { return false; }
+
+        //! Gets the Geometry type of the FeatureSource
+        //! @return Geometry type of the FeatureSource
+        virtual Geometry::Type getGeometryType() const { return Geometry::TYPE_UNKNOWN; }
+
+        //! Returns true if this source creates features with embedded style information.
+        //! By default, this is false (features are not expected to carry their own
+        //! style definitions).
+        virtual bool hasEmbeddedStyles() const { return false; }
+
+        //! Accesses the list of feature filters that will transform features
+        //! before they are returned in a feature cursor.
+        const FeatureFilterChain& getFilters() const;
+
+        //! Adds a feature ID to the blacklist.
+        void addToBlacklist( FeatureID fid );
+
+        //! Removes a feature from the blacklist.
+        void removeFromBlacklist( FeatureID fid );
+
+        //! Clears the blacklist.
+        void clearBlacklist();
+
+        //! Checks the blacklist for a feature ID.
+        bool isBlacklisted( FeatureID fid ) const;
+
+        //! Build (or rebuild) a disk-based spatial index.
+        virtual void buildSpatialIndex() { }
+
+
+    protected:
+        osg::ref_ptr<const FeatureProfile> _featureProfile;
+        URIContext _uriContext;
+        mutable Threading::ReadWriteMutex  _blacklistMutex;
+        std::unordered_set<FeatureID> _blacklist;
+        unsigned _blacklistSize;
+
+        typedef LRUCache<TileKey, FeatureList> FeaturesLRU;
+        mutable std::unique_ptr< FeaturesLRU > _featuresCache;
+        mutable std::mutex _featuresCacheMutex;
+
+        //! Implements the feature cursor creation
+        virtual FeatureCursor* createFeatureCursorImplementation(
+            const Query& query,
+            ProgressCallback* progress)=0;
+
+    private:
+        FeatureFilterChain _filters;
+
+        //! Convenience function to apply the filters to a FeatureList
+        void applyFilters(FeatureList& features, const GeoExtent& extent) const;
+
+    };
+}
+
+OSGEARTH_SPECIALIZE_CONFIG(osgEarth::FeatureSource::Options);

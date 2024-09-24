@@ -1,0 +1,15 @@
+<!-- 
+Demonstrates the "min_range" and "max_range" properties.
+-->
+
+<map name="Demo: min/max range">
+ 
+    <GDALImage name="world-tiff">
+        <url>../data/world.tif</url>
+    </GDALImage>
+    
+    <TMSImage name="readymap_imagery" max_range="10000000" min_range="2000000" attenuation_range="2500000">
+        <url>https://readymap.org/readymap/tiles/1.0.0/7/</url>
+    </TMSImage>
+    
+</map>

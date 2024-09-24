@@ -1,0 +1,26 @@
+<!--
+osgEarth Sample - OpenWeatherMap Clouds
+-->
+<map name="Demo: OpenWeatherMap">
+
+    <xi:include href="readymap_imagery.xml"/> 
+
+    <XYZImage name="Cloud Cover" visible="true">
+        <url>https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=92cfef259508be57f2001ac68224aba7</url>
+        <profile>spherical-mercator</profile>
+        <cache_policy usage="no_cache"/>
+    </XYZImage>
+
+    <XYZImage name="Precipitation" visible="false">
+        <url>https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=92cfef259508be57f2001ac68224aba7</url>
+        <profile>spherical-mercator</profile>
+        <cache_policy usage="no_cache"/>
+    </XYZImage>
+
+    <XYZImage name="Wind" visible="false">
+        <url>https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=92cfef259508be57f2001ac68224aba7</url>
+        <profile>spherical-mercator</profile>
+        <cache_policy usage="no_cache"/>
+    </XYZImage>
+
+</map>

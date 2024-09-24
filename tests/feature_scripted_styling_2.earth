@@ -1,0 +1,48 @@
+<!--
+osgEarth Sample
+Demonstrates how to select a style name using javascript.
+-->
+
+<map name="Demo: scripted style selector">
+
+    <GDALImage name="world">
+        <url>../data/world.tif</url>
+    </GDALImage>
+    
+    <OGRFeatures name="country-data">
+        <url>../data/world.shp</url>
+        <filters>
+            <buffer distance="-0.05"/>
+        </filters>
+    </OGRFeatures>
+    
+    <FeatureModel name="countries" features="country-data">        
+        <styles>        
+            <style type="text/css">
+                base { altitude-clamping: terrain-drape; }
+                p1 : base { fill: #ffff80; }
+                p2 : base { fill: #80ffff; }
+                p3 : base { fill: #ff80ff; }
+                p4 : base { fill: #ff8080; }
+                p5 : base { fill: #80ff80; }
+            </style>
+            
+            <script language="javascript">
+              <![CDATA[
+                function getStyleClass()
+                {
+                    var pop = parseInt(feature.properties.pop);
+                    if      ( pop <= 14045470 )  return "p1";
+                    else if ( pop <= 43410900 )  return "p2";
+                    else if ( pop <= 97228750 )  return "p3";
+                    else if ( pop <= 258833000 ) return "p4";
+                    else                         return "p5";
+                }
+              ]]>
+            </script>
+            
+            <selector class_expr="getStyleClass()"/>
+        </styles>        
+    </FeatureModel>
+    
+</map>

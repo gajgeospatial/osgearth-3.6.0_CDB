@@ -1,0 +1,72 @@
+<!--
+osgEarth Sample
+Shows how to use an Intersect Filter to crop incoming features 
+to a polygon mask.
+-->
+
+<map name="Demo: Intersect Filter">
+
+    <GDALImage name="World Imagery">
+        <url>../data/world.tif</url>
+    </GDALImage>
+
+    <FeatureModel name="Outline of France">
+        <OGRFeatures>
+            <url>../data/france.shp</url>
+        </OGRFeatures>
+        <styles>
+            <style>
+                stroke: #ffff00;
+                stroke-tessellation-size: 10km;
+                render-depth-offset: true;
+            </style>
+        </styles>
+    </FeatureModel>
+
+    <OGRFeatures name="cities">
+        <url>../data/cities.gpkg</url>
+    </OGRFeatures>
+
+    <FeatureModel name="Cities in France">
+        <features>cities</features>
+        <filters>
+            <intersect>
+                <comment>
+                        Features: geometry to intersect with;
+                        Contains: true=features fall inside geometry; false=outside
+                        Exact:    true=use exact geometry; false=use bounding boxes only
+                </comment>
+
+                <OGRFeatures>
+                    <url>../data/france.shp</url>
+                </OGRFeatures>
+                <contains>true</contains>
+
+            </intersect>
+        </filters>
+
+        <styles>
+            <style type="text/css">              
+                cities {
+                    icon:           "../data/placemark32.png";
+                    text-content:   [name];
+                    text-encoding:  utf-8;
+                    text-halo:      #3f3f3f;
+                }     
+            </style>
+        </styles>
+    </FeatureModel>
+
+
+    <Viewpoints home="0" time="0">
+        <viewpoint>
+            <heading>2.42392e-07</heading>
+            <pitch>-89</pitch>
+            <range>3.3434e+06m</range>
+            <long>2.302287884490098</long>
+            <lat>47.61121725887276</lat>
+            <height>-41.88410698436201</height>
+            <srs>+proj=longlat +datum=WGS84 +no_defs </srs>
+        </viewpoint>
+    </Viewpoints>
+</map>

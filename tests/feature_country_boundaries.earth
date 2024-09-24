@@ -1,0 +1,33 @@
+<map name="Worldwide Line Vectors">
+
+    <xi:include href="readymap_imagery.xml"/>
+    <xi:include href="readymap_elevation.xml"/>
+            
+    <OGRFeatures name="world-data">
+        <url>../data/world.shp</url>
+        <filters>
+            <convert type="line"/>
+        </filters>
+    </OGRFeatures>
+    
+    <FeatureModel name="Country boundaries" features="world-data">
+        
+        <layout tile_size="500000" crop_features="true" paged="true">
+            <level max_range="1e10"/>
+        </layout>
+                
+        <styles>
+            <style type="text/css">
+                world {
+                   stroke:                   #ffff00;
+                   stroke-width:             3px;
+                   stroke-tessellation-size: 1km;
+                   render-lighting:          false;
+                   altitude-clamping:        terrain-drape;        
+                }            
+            </style>
+        </styles>
+        
+    </FeatureModel>
+  
+</map>

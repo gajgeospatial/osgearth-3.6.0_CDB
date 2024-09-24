@@ -1,0 +1,19 @@
+<!-- 
+osgEarth Sample - GDAL Driver NoData
+Demonstrates the use of a file with nodata.  The white circle is a GeoTiff which has 0 marked as NoData so the black borders in the original imagery should show up as transparent.
+-->
+
+<map version="2">
+
+    <GDALImage name="world-tiff">
+        <url>../data/world.tif</url>
+    </GDALImage>
+
+    <GDALImage name="nodata-tiff">
+        <url>../data/nodata.tif</url>
+    </GDALImage>
+
+    <viewpoints home="0">
+        <viewpoint name="NoData" heading="0.0" height="0" lat="5.0" long="15.0" pitch="-75" range="1000000"/>
+    </viewpoints>
+</map>

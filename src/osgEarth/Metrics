@@ -1,0 +1,87 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2008-2012 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#pragma once
+
+#include <osgEarth/Common>
+
+// forward
+namespace osgViewer {
+    class ViewerBase;
+}
+
+namespace osgEarth
+{
+    namespace Util
+    {
+        class OSGEARTH_EXPORT Metrics
+        {
+        public:
+            //! Convenience function to run the OSG frame loop with metrics.
+            static int run(osgViewer::ViewerBase& viewer);
+
+            static void frame();
+
+            //! Whether metrics collection is enabled.
+            static bool enabled();
+
+            //! Toggle on metrics collection
+            static void setEnabled(bool enabled);
+
+            //! Whether to install GPU profiling.
+            static void setGPUProfilingEnabled(bool enabled);
+        };
+    }
+}
+
+#ifdef OSGEARTH_HAVE_TRACY
+
+// if you used a config.cmake file to get tracy, TRACY_ENABLE is already defined
+#ifndef TRACY_ENABLE
+#define TRACY_ENABLE
+#endif
+
+#define TRACY_ON_DEMAND
+#define TRACY_DELAYED_INIT
+#include <tracy/Tracy.hpp>
+
+#define OE_PROFILING_ZONE ZoneNamed( ___tracy_scoped_zone, osgEarth::Util::Metrics::enabled() )
+#define OE_PROFILING_ZONE_NAMED(functionName) ZoneNamedN(___tracy_scoped_zone, functionName, osgEarth::Util::Metrics::enabled())
+#define OE_PROFILING_ZONE_COLOR(color) ZoneScopedC(___tracy_scoped_zone, color, osgEarth::Util::Metrics::enabled())
+#define OE_PROFILING_ZONE_TEXT(text) _zoneSetText(___tracy_scoped_zone, text)
+#define OE_PROFILING_PLOT(name, value) if (osgEarth::Util::Metrics::enabled()) {TracyPlot(name, value);}
+#define OE_PROFILING_FRAME_MARK if (osgEarth::Util::Metrics::enabled()) {FrameMark;}
+#define OE_LOCKABLE(type, varname) TracyLockable(type, varname)
+#define OE_LOCKABLE_NAMED(type, varname, desc) TracyLockableN(type, varname, desc)
+#define OE_LOCKABLE_BASE( type ) LockableBase( type )
+
+#define OE_PROFILING_GPU_ZONE(name)
+
+#else // ifndef OSGEARTH_HAVE_TRACY
+
+#define OE_PROFILING_ZONE
+#define OE_PROFILING_ZONE_NAMED(functionName)
+#define OE_PROFILING_ZONE_COLOR(color)
+#define OE_PROFILING_ZONE_TEXT(text)
+#define OE_PROFILING_PLOT(name, value)
+#define OE_PROFILING_FRAME_MARK
+#define OE_LOCKABLE(type, varname) type varname
+#define OE_LOCKABLE_BASE( type ) type
+#define OE_PROFILING_GPU_ZONE(name)
+
+#endif

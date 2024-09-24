@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="N:\Development\Dev_Base\osgearth-3.6\docs\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\3.0_upgrade_guide.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\arcgis.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\bing.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\build.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\cesiumion.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\composite.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\conf.py" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\contourmap.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\data.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\earthfile.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\elevation.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\faq.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\featureimage.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\featuremodel.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\gdal.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\image.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\index.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\install.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\layer.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\layers.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\license.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\mbtiles.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\osgearth_conv.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\releasenotes.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\requirements.txt" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\support.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\tiledfeaturemodel.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\TileLayer.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\tms.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\visiblelayer.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\wms.md" />
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\xyz.md" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

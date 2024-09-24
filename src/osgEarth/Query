@@ -1,0 +1,82 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2020 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+
+#ifndef OSGEARTHSYMBOLOGY_QUERY_H
+#define OSGEARTHSYMBOLOGY_QUERY_H 1
+
+#include <osgEarth/Common>
+#include <osgEarth/GeoData>
+#include <osgEarth/TileKey>
+#include <osgEarth/Units>
+
+namespace osgEarth
+{
+    /**
+     * A query filter that you can use to limit a set of symbology to process.
+     */
+    class OSGEARTH_EXPORT Query
+    {
+    public:
+        //! Default constructor
+        Query() = default;
+
+        //! Copy constructor
+        Query(const Query& rhs) = default;
+
+        //! Construct from a serialized representation
+        Query(const Config& conf);
+
+        //! Construct from a tile key
+        Query(const TileKey& key);
+
+        static Query ALL;
+
+    public: // properties
+
+        //! geospatial extent bounding this query when not using a tile key
+        OE_OPTION(Bounds, bounds);
+
+        //! Driver-specific query expression
+        OE_OPTION(std::string, expression);
+
+        //! Driver-specific orderby expression
+        OE_OPTION(std::string, orderby);
+
+        //! Sets tilekey to use for tiled feature sources
+        OE_OPTION(TileKey, tileKey);
+
+        //! Optional buffer to use with a tile key
+        OE_OPTION(Distance, buffer);
+
+        //! Maximum number of features to be returned by this Query
+        OE_OPTION(int, limit);
+
+        /** Merges this query with another query, and returns the result */
+        Query combineWith( const Query& other ) const;
+
+    public: // configurable
+
+        virtual Config getConfig() const;
+        void mergeConfig( const Config& conf );
+    };
+} // namespace osgEarth
+
+OSGEARTH_SPECIALIZE_CONFIG(osgEarth::Query);
+
+#endif // OSGEARTHSYMBOLOGY_QUERY_H

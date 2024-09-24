@@ -1,0 +1,30 @@
+<!--
+osgEarth Sample : Hi-resolution inset
+
+This example shows how to use a global basemap and superimpose
+high-resolution imagery insets.
+
+Look for hi-res insets over the cities of Boston and New York.
+-->
+
+<map name="hi-res inset">
+    
+	<!-- Low resolution worldwide image -->
+    <GDALImage name="World">
+        <url>../data/world.tif</url>
+    </GDALImage>
+
+	<!-- Higher resolution inset of Boston -->
+    <GDALImage name="Boston">
+		<url>../data/boston-inset-wgs84.tif</url>
+	</GDALImage>
+	
+	<!-- Higher resolution inset of New York City -->
+    <GDALImage name="New York">
+		<url>../data/nyc-inset-wgs84.tif</url>
+	</GDALImage>
+    
+    <viewpoints home="0">
+	    <viewpoint name="Hi-res insets" lat="41.642" long="-72.333" pitch="-71" range="657510"/>
+	</viewpoints>
+</map>

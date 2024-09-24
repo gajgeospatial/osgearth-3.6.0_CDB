@@ -1,0 +1,15 @@
+<!--
+osgEarth Sample - UTM Projection
+-->
+<map name="UTM Example">  
+    
+    <options>
+        <profile>
+            <srs>+proj=utm +zone=31 +north +datum=WGS84 +units=m +no_defs</srs>
+        </profile>
+        
+        <terrain tile_size="2" morph_terrain="false"/>
+    </options>
+    
+    <xi:include href="readymap_imagery.xml"/>
+</map>

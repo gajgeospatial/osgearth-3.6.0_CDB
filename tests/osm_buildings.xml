@@ -1,0 +1,68 @@
+<FeatureModel name="OSM Buildings" features="data:osm">
+    <pickable>false</pickable>
+    <node_caching>true</node_caching>
+    <max_range>15000</max_range>
+    <attenuation_range>2000</attenuation_range>
+    <fading duration="1"/>
+    <filters>
+        <attributes>building</attributes>
+    </filters>
+    <styles>          
+        <library name="us_resources">
+            <!-- <url>../data/resources/textures_us/catalog_atlas.osgb.xml</url> -->
+            <url>../data/resources/textures_us/catalog.xml</url>
+        </library>
+        
+        <style type="text/css">
+            default {
+                extrusion-height:        getBuildingHeight();
+                extrusion-flatten:       true;
+                extrusion-wall-style:    building-wall;
+                extrusion-wall-gradient: 0.5;
+                extrusion-roof-style:    building-rooftop;
+                altitude-clamping:       terrain;
+            }            
+            building-wall {
+                skin-library:     us_resources;
+                skin-tags:        building;
+                skin-random-seed: 1;
+            }
+            building-rooftop {
+                skin-library:     us_resources;
+                skin-tags:        rooftop;
+                skin-tiled:       true;
+                skin-random-seed: 1;
+            }
+        </style>
+        
+        <!-- <selector style_expr="selectStyle()"/> -->
+        <script language="javascript">
+            <![CDATA[
+                function getBuildingHeight() {
+                    if ("height" in feature.properties) {
+                        var h = feature.properties["height"].replace('m','');
+                        return Math.max(h, 4.0);
+                    } else if ("building:height" in feature.properties) {
+                        var h = feature.properties["building:height"].replace('m','');
+                        return Math.max(h, 4.0);
+                    } else if ("building:levels" in feature.properties){
+                        var l = feature.properties["building:levels"];
+                        return Math.max(l * 4.0, 4.0);
+                    }
+                    return 4.0 + (feature.id % 10);
+                }
+              ]]>
+        </script>
+    </styles>
+    <shader>
+      <![CDATA[
+        #version 330
+        #pragma vp_function buildings_frag, fragment
+        struct OE_PBR { float displacement, roughness, ao, metal; } oe_pbr;
+        void buildings_frag(inout vec4 color) {
+            oe_pbr.roughness = 0.5;
+            oe_pbr.metal = 0.5;
+        }
+      ]]>
+    </shader>
+</FeatureModel>

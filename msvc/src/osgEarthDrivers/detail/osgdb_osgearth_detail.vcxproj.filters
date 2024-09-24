@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\detail\DetailPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\detail\DetailExtension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\detail\DetailTerrainEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\AutoGenShaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\osgEarthDrivers\detail\DetailShaders.cpp.in">
+      <Filter>Template Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\CMakeFiles\186ea27e10fecc7f4e00c20ac5d32cde\AutoGenShaders.cpp.rule" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\src\osgEarthDrivers\detail\DetailShaders" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\detail\DetailExtension" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\detail\DetailOptions" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\detail\DetailTerrainEffect" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\detail\Detail.vert.view.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\detail\Detail.frag.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E3C60AB4-BC05-3BA9-825A-FE9D85A39B37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{82E7045D-9DAE-330D-8718-32B002864A97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{45A219FD-AEEA-33F9-A150-89B56AC810F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0595F28A-36BD-3194-B6DF-51C44A544A5F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{B7FE9714-CB68-3285-BC58-C53139B95256}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

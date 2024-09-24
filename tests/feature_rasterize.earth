@@ -1,0 +1,26 @@
+<!--
+FeatureImage - rasterizes feature data into an image layer.
+-->
+
+<Map name="Demo: FeatureImage Rasterizer">
+
+    <xi:include href="readymap_imagery.xml"/>
+    
+    <OGRFeatures name="world-data">
+        <url>../data/world.shp</url>
+    </OGRFeatures>
+    
+    <FeatureImage name="World Boundaries">
+        <features>world-data</features>
+        <styles>        
+            <style type="text/css">
+                default {
+                    fill:          #ff7700;
+                    stroke:        #ffff00;
+                    stroke-width:  5km;
+                }
+            </style>
+        </styles>
+    </FeatureImage>
+  
+</Map>

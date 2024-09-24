@@ -1,0 +1,29 @@
+<!--
+osgEarth Sample - Feature Occlusion Culling
+Demonstrates occlusion culling on feature labels.
+-->
+<map name="Demo: Occlusion culling">
+        
+    <xi:include href="readymap_imagery.xml"/>
+    <xi:include href="readymap_elevation.xml"/>
+    
+    <OGRFeatures name="labels-data">
+        <url>../data/world.shp</url>
+    </OGRFeatures>
+            
+    <FeatureModel name="labels" features="labels-data">
+        <styles>
+            <style type="text/css">              
+                labels {                            
+                   text-content:        [name];
+                   text-priority:       [pop];
+                   text-halo:           #3f3f7f;
+                   text-align:          center_center;
+                   text-declutter:      true;
+                   text-occlusion-cull: true;
+                }     
+            </style>
+        </styles>        
+    </FeatureModel>    
+    
+</map>

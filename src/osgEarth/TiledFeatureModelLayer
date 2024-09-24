@@ -1,0 +1,133 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2020 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#ifndef OSGEARTH_TILED_FEATURE_MODEL_LAYER
+#define OSGEARTH_TILED_FEATURE_MODEL_LAYER 1
+
+#include <osgEarth/Common>
+#include <osgEarth/FeatureSource>
+#include <osgEarth/GeometryCompiler>
+#include <osgEarth/FeatureModelSource>
+#include <osgEarth/Session>
+#include <osgEarth/Style>
+#include <osgEarth/Layer>
+#include <osgEarth/LayerReference>
+#include <osgEarth/TiledModelLayer>
+
+namespace osgEarth {
+    class Map;
+}
+
+namespace osgEarth
+{
+    class FeatureNodeFactory;
+
+    /**
+     * Layer that creates a tiled scene graph from feature data and symbology.
+     */
+    class OSGEARTH_EXPORT TiledFeatureModelLayer : public TiledModelLayer
+    {
+    public: // serialization
+        class OSGEARTH_EXPORT Options : public TiledModelLayer::Options,
+                                        public FeatureModelOptions,
+                                        public GeometryCompilerOptions
+        {
+        public:
+            // constructors
+            Options();
+            Options(const ConfigOptions& options);
+            OE_OPTION_LAYER(FeatureSource, features);            
+            Config getConfig() const override;
+        protected: // LayerOptions
+            void mergeConfig(const Config& conf) override;
+        private:
+            void fromConfig(const Config& conf);
+        };
+
+    public:
+        META_Layer(osgEarth, TiledFeatureModelLayer, Options, TiledModelLayer, TiledFeatureModel);
+
+        //! The feature source from which to read geometry.
+        void setFeatureSource(FeatureSource* layer);
+        FeatureSource* getFeatureSource() const;
+
+        //! Stylesheet to apply to the features
+        void setStyleSheet(StyleSheet* value);
+        StyleSheet* getStyleSheet() const;
+
+        //! Whether to enable GL blending
+        void setAlphaBlending(const bool& value);
+        const bool& getAlphaBlending() const;
+
+        //! Whether to support lighting
+        void setEnableLighting(const bool& value);
+        const bool& getEnableLighting() const;
+
+    public: // Layer
+
+        // opens the layer and returns the status
+        Status openImplementation() override;
+
+        // closes the layer
+        Status closeImplementation() override;
+
+        //! Extent of the feature layer, if available (INVALID if not)
+        const GeoExtent& getExtent() const override;
+
+        //! Serialization
+        Config getConfig() const override;
+
+    public: // TiledModelLayer
+
+        //! Tiling profile of this layer
+        const Profile* getProfile() const override;
+
+        //! Minimum available LOD of tiles
+        unsigned getMinLevel() const override;
+
+        //! Maximum available LOD of tiles
+        unsigned getMaxLevel() const override;
+
+    protected: // Layer
+        
+        // called by the map when this layer is added
+        void addedToMap(const Map*) override;
+
+        // called by the map when this layer is removed
+        void removedFromMap(const Map*) override;
+
+        // post-ctor initialization
+        void init() override;
+
+    protected: // TiledModelLayer
+
+        //! Creates an OSG node from a tile key.
+        osg::ref_ptr<osg::Node> createTileImplementation(const TileKey&, ProgressCallback*) const override;
+
+    protected:
+
+        virtual ~TiledFeatureModelLayer();
+
+        osg::ref_ptr<class Session> _session;
+        FeatureFilterChain _filters;
+        osg::ref_ptr< FeatureSourceIndex > _featureIndex;
+    };
+
+} // namespace osgEarth
+
+#endif // OSGEARTH_FEATURES_FEATURE_MODEL_LAYER

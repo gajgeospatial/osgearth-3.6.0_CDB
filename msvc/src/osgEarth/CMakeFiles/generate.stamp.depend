@@ -1,0 +1,20 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindBlend2D.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindBlosc.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindCURL.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindGDAL.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindGEOS.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindMeshoptimizer.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindProtobuf.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindSQLite3.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindSpdlog.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake
+N:/Development/Dev_Base/libzip-1.10.0/msvc/libzip-config-version.cmake
+N:/Development/Dev_Base/libzip-1.10.0/msvc/libzip-config.cmake
+N:/Development/Dev_Base/libzip-1.10.0/msvc/libzip-targets.cmake
+N:/Development/Dev_Base/osgearth-3.6/cmake/ConfigureShaders.cmake.in
+N:/Development/Dev_Base/osgearth-3.6/src/osgEarth/BuildConfig.in
+N:/Development/Dev_Base/osgearth-3.6/src/osgEarth/CMakeLists.txt
+N:/Development/Dev_Base/osgearth-3.6/src/osgEarth/Version.in

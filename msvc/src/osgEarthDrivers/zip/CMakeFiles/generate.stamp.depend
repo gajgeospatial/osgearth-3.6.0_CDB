@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+N:/Development/Dev_Base/libzip-1.10.0/msvc/libzip-config-version.cmake
+N:/Development/Dev_Base/libzip-1.10.0/msvc/libzip-config.cmake
+N:/Development/Dev_Base/libzip-1.10.0/msvc/libzip-targets.cmake
+N:/Development/Dev_Base/osgearth-3.6/src/osgEarthDrivers/zip/CMakeLists.txt

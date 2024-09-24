@@ -1,0 +1,22 @@
+<!--
+osgEarth Sample - State Plane Projection
+-->
+
+<map name="Demo: State Plane Projection">
+
+    <options>
+        <profile name="NAD83 Maryland State Plane (meters)">
+            <srs>+proj=lcc +lat_1=38.3 +lat_2=39.45 +lat_0=37.66667 +lon_0=-77 +x_0=399999.9 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=1.0 +no_defs</srs>
+            <xmin>390021</xmin>
+            <ymin>126298</ymin>
+            <xmax>407833</xmax>
+            <ymax>147521</ymax>
+        </profile>
+        <terrain tile_size="2"/>
+    </options>
+    
+    <ArcGISServerImage name="Hi-res Imagery">
+        <url>http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer</url>
+    </ArcGISServerImage> 
+   
+</map>

@@ -1,0 +1,56 @@
+<!--
+osgEarth Sample
+Weather (RADAR and IR) overlaid on the map.
+-->
+
+<map name="Current Weather">
+
+    <TMSImage name="ReadyMap 15m Imagery">
+        <url>https://readymap.org/readymap/tiles/1.0.0/7/</url>
+    </TMSImage>
+
+    <!-- GlobalIR Imgery from http://realearth.ssec.wisc.edu/ -->	
+    <XYZImage name="GlobalIR" async="true">
+        <url>http://realearth.ssec.wisc.edu/tiles/globalir/{z}/{x}/{y}.png</url>                
+        <profile>spherical-mercator</profile>
+        <cache_policy usage="no_cache"/>
+        <shader>
+            <![CDATA[
+            #version 330
+            #pragma vp_entryPoint adjustAlpha
+            #pragma vp_location fragment_coloring
+            void adjustAlpha(inout vec4 color) {
+                color.a *= clamp(distance(color.rgb, vec3(0.0)), 0.0, 1.0);
+                color.a = pow(color.a, 4.0);
+            }
+          ]]>
+        </shader>
+        <altitude>10000</altitude>
+    </XYZImage>
+
+    <!-- NEXRAD 45 minute RADAR returns -->
+    <WMSImage name="nexrad45min" async="true">
+        <url>http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi</url>
+        <format>png</format>
+        <layers>nexrad-n0r</layers>
+        <tile_size>256</tile_size>
+        <srs>EPSG:4326</srs>
+        <transparent>true</transparent>
+        <cache_policy usage="no_cache"/>
+        <altitude>20000</altitude>
+    </WMSImage>
+
+    <!-- US State Boundaries -->
+    <FeatureModel name="US States">
+        <OGRFeatures name="US-Data">
+            <url>../data/usa.shp</url>
+        </OGRFeatures>
+        <style type="text/css">
+            states {
+               stroke: #7f7f7f; 
+               stroke-width: 2px;
+               render-depth-offset: true;
+            }                    
+        </style>  
+    </FeatureModel>
+</map>

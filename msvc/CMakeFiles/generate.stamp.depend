@@ -1,0 +1,52 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.20/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindGLEW.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindGit.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindOpenSceneGraph.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindOpenThreads.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Findosg.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgDB.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgGA.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgManipulator.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgShadow.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgSim.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgText.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgUtil.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/FindosgViewer.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Findosg_functions.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files/CMake/share/cmake-3.20/Modules/WriteBasicConfigVersionFile.cmake
+N:/Development/Dev_Base/osgearth-3.6/CMakeLists.txt
+N:/Development/Dev_Base/osgearth-3.6/cmake/cmake_uninstall.cmake.in
+N:/Development/Dev_Base/osgearth-3.6/cmake/install-package-config-files.cmake
+N:/Development/Dev_Base/osgearth-3.6/cmake/oe_ios.cmake
+N:/Development/Dev_Base/osgearth-3.6/cmake/oe_osx.cmake
+N:/Development/Dev_Base/osgearth-3.6/cmake/oe_unix.cmake
+N:/Development/Dev_Base/osgearth-3.6/cmake/oe_win32.cmake
+N:/Development/Dev_Base/osgearth-3.6/cmake/osgearth-macros.cmake
+N:/Development/Dev_Base/osgearth-3.6/msvc/CMakeFiles/3.20.0/CMakeCCompiler.cmake
+N:/Development/Dev_Base/osgearth-3.6/msvc/CMakeFiles/3.20.0/CMakeCXXCompiler.cmake
+N:/Development/Dev_Base/osgearth-3.6/msvc/CMakeFiles/3.20.0/CMakeRCCompiler.cmake
+N:/Development/Dev_Base/osgearth-3.6/msvc/CMakeFiles/3.20.0/CMakeSystem.cmake
+N:/Development/Dev_Base/osgearth-3.6/osgEarthConfig.cmake.in

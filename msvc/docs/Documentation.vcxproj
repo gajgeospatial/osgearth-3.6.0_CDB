@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1A8DC6F9-D647-3210-B2D6-A5C1854D4E6E}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>Documentation</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>N:\Development\Dev_Base\osgearth-3.6\msvc\build_include;N:\Development\Dev_Base\osgearth-3.6\src;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\msvc\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>N:\Development\Dev_Base\osgearth-3.6\msvc\build_include;N:\Development\Dev_Base\osgearth-3.6\src;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\msvc\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>N:\Development\Dev_Base\osgearth-3.6\msvc\build_include;N:\Development\Dev_Base\osgearth-3.6\src;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\msvc\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>N:\Development\Dev_Base\osgearth-3.6\msvc\build_include;N:\Development\Dev_Base\osgearth-3.6\src;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0\msvc\include;N:\Development\Dev_Base\OpenSceneGraph-3.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="N:\Development\Dev_Base\osgearth-3.6\docs\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule N:/Development/Dev_Base/osgearth-3.6/docs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SN:/Development/Dev_Base/osgearth-3.6 -BN:/Development/Dev_Base/osgearth-3.6/msvc --check-stamp-file N:/Development/Dev_Base/osgearth-3.6/msvc/docs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">N:\Development\Dev_Base\osgearth-3.6\msvc\docs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule N:/Development/Dev_Base/osgearth-3.6/docs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SN:/Development/Dev_Base/osgearth-3.6 -BN:/Development/Dev_Base/osgearth-3.6/msvc --check-stamp-file N:/Development/Dev_Base/osgearth-3.6/msvc/docs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">N:\Development\Dev_Base\osgearth-3.6\msvc\docs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule N:/Development/Dev_Base/osgearth-3.6/docs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SN:/Development/Dev_Base/osgearth-3.6 -BN:/Development/Dev_Base/osgearth-3.6/msvc --check-stamp-file N:/Development/Dev_Base/osgearth-3.6/msvc/docs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">N:\Development\Dev_Base\osgearth-3.6\msvc\docs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule N:/Development/Dev_Base/osgearth-3.6/docs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SN:/Development/Dev_Base/osgearth-3.6 -BN:/Development/Dev_Base/osgearth-3.6/msvc --check-stamp-file N:/Development/Dev_Base/osgearth-3.6/msvc/docs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">N:\Development\Dev_Base\osgearth-3.6\msvc\docs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\3.0_upgrade_guide.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\arcgis.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\bing.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\build.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\cesiumion.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\composite.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\conf.py">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\contourmap.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\data.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\earthfile.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\elevation.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\faq.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\featureimage.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\featuremodel.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\gdal.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\image.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\index.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\install.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\layer.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\layers.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\license.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\mbtiles.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\osgearth_conv.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\releasenotes.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\requirements.txt">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\support.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\tiledfeaturemodel.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\TileLayer.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\tms.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\visiblelayer.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\wms.md">
+    </None>
+    <None Include="N:\Development\Dev_Base\osgearth-3.6\docs\source\xyz.md">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="N:\Development\Dev_Base\osgearth-3.6\msvc\ZERO_CHECK.vcxproj">
+      <Project>{2A0AA129-D0A9-319F-98BD-0669ADA367A3}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

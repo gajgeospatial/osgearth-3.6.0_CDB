@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\CreateTileImplementation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\DrawState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\DrawTileCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\GeometryPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexTerrainEngineNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexTerrainEngineDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\LayerDrawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\LoadTileData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\SelectionInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\SurfaceNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TerrainCuller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TerrainRenderData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileDrawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\EngineContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileNodeRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Unloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\AutoGenShaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Shaders.cpp.in">
+      <Filter>Template Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\CMakeFiles\890a218186417541d54ecacbea1a99b2\AutoGenShaders.cpp.rule" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Common" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\CreateTileImplementation" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\DrawState" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\DrawTileCommand" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\GeometryPool" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Shaders" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexTerrainEngineNode" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\LayerDrawable" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\LoadTileData" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RenderBindings" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\SurfaceNode" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TerrainCuller" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TerrainRenderData" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileDrawable" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileRenderModel" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\EngineContext" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileNode" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\TileNodeRegistry" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Loader" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\Unloader" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\SelectionInfo" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.vert.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.elevation.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.gs.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.ImageLayer.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.NormalMap.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.Morphing.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.Tessellation.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.SDK.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.vert.GL4.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.ImageLayer.GL4.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.NormalMap.GL4.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.Tessellation.GL4.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.SDK.GL4.glsl" />
+    <None Include="..\..\..\..\src\osgEarthDrivers\engine_rex\RexEngine.GL4.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E3C60AB4-BC05-3BA9-825A-FE9D85A39B37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{82E7045D-9DAE-330D-8718-32B002864A97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{45A219FD-AEEA-33F9-A150-89B56AC810F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0595F28A-36BD-3194-B6DF-51C44A544A5F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template Files">
+      <UniqueIdentifier>{B7FE9714-CB68-3285-BC58-C53139B95256}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

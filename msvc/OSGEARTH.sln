@@ -1,0 +1,685 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D3A7F72B-09B9-35B4-A5C7-DB0FEE99AA9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{77777484-463F-36BD-9B58-13C135B46CAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{98803017-58E9-30FB-A0B7-08C00322FA8E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth", "src\osgEarth\osgEarth.vcxproj", "{43689C9B-4850-3A06-A032-A4402EB43304}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg earth", "src\osgEarthDrivers\earth\osgdb_earth.vcxproj", "{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg fastdxt", "src\osgEarthDrivers\fastdxt\osgdb_fastdxt.vcxproj", "{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg gltf", "src\osgEarthDrivers\gltf\osgdb_gltf.vcxproj", "{3C746FA9-0521-3E5E-B81B-F95B418D24C9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg kml", "src\osgEarthDrivers\kml\osgdb_kml.vcxproj", "{7A1594ED-5B59-3669-B610-284310FB94CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth bumpmap", "src\osgEarthDrivers\bumpmap\osgdb_osgearth_bumpmap.vcxproj", "{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth cache_filesystem", "src\osgEarthDrivers\cache_filesystem\osgdb_osgearth_cache_filesystem.vcxproj", "{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth colorramp", "src\osgEarthDrivers\colorramp\osgdb_osgearth_colorramp.vcxproj", "{3E61CED1-E061-38A5-AD55-3BFB71FE9521}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth detail", "src\osgEarthDrivers\detail\osgdb_osgearth_detail.vcxproj", "{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth engine_rex", "src\osgEarthDrivers\engine_rex\osgdb_osgearth_engine_rex.vcxproj", "{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth featurefilter_intersect", "src\osgEarthDrivers\featurefilter_intersect\osgdb_osgearth_featurefilter_intersect.vcxproj", "{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth featurefilter_join", "src\osgEarthDrivers\featurefilter_join\osgdb_osgearth_featurefilter_join.vcxproj", "{CC11983B-E514-30F1-9232-3ED213059AE4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth scriptengine_javascript", "src\osgEarthDrivers\script_engine_duktape\osgdb_osgearth_scriptengine_javascript.vcxproj", "{55686967-454A-301A-BD01-B6C4072EC047}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth sky_gl", "src\osgEarthDrivers\sky_gl\osgdb_osgearth_sky_gl.vcxproj", "{524C519C-C92F-30A6-A99F-FCB7CE7D0278}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth sky_simple", "src\osgEarthDrivers\sky_simple\osgdb_osgearth_sky_simple.vcxproj", "{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth terrainshader", "src\osgEarthDrivers\terrainshader\osgdb_osgearth_terrainshader.vcxproj", "{20776C73-D198-3781-A31D-66596F6B2172}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth vdatum_egm2008", "src\osgEarthDrivers\vdatum_egm2008\osgdb_osgearth_vdatum_egm2008.vcxproj", "{44079631-A13C-38ED-9C63-BFBF7FE6DD74}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth vdatum_egm84", "src\osgEarthDrivers\vdatum_egm84\osgdb_osgearth_vdatum_egm84.vcxproj", "{AC9E2322-60AB-3B69-8866-346044ADAC59}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth vdatum_egm96", "src\osgEarthDrivers\vdatum_egm96\osgdb_osgearth_vdatum_egm96.vcxproj", "{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgEarth viewpoints", "src\osgEarthDrivers\viewpoints\osgdb_osgearth_viewpoints.vcxproj", "{CA3FB9DD-EC68-3100-97BD-33CA2E575466}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg template", "src\osgEarthDrivers\template\osgdb_template.vcxproj", "{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg webp", "src\osgEarthDrivers\webp\osgdb_webp.vcxproj", "{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_3pv", "src\applications\osgearth_3pv\osgearth_3pv.vcxproj", "{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_annotation", "src\applications\osgearth_annotation\osgearth_annotation.vcxproj", "{AF56FF47-3736-32B9-B993-A0B0302768BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_atlas", "src\applications\osgearth_atlas\osgearth_atlas.vcxproj", "{E5F98775-1D4A-332D-8024-07B793BEF263}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_bakefeaturetiles", "src\applications\osgearth_bakefeaturetiles\osgearth_bakefeaturetiles.vcxproj", "{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_boundarygen", "src\applications\osgearth_boundarygen\osgearth_boundarygen.vcxproj", "{D266175E-413C-35D3-BB50-F4BC2C948621}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_clamp", "src\applications\osgearth_clamp\osgearth_clamp.vcxproj", "{55D78096-EBF9-326D-BA0E-17D29E56D229}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_conv", "src\applications\osgearth_conv\osgearth_conv.vcxproj", "{CCF4CA84-C35B-3847-8A0D-9F66964EC568}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_featurefilter", "src\applications\osgearth_featurefilter\osgearth_featurefilter.vcxproj", "{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_features", "src\applications\osgearth_features\osgearth_features.vcxproj", "{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_heatmap", "src\applications\osgearth_heatmap\osgearth_heatmap.vcxproj", "{C3CDC0FA-FA88-36F1-9E50-7374E915173D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_infinitescroll", "src\applications\osgearth_infinitescroll\osgearth_infinitescroll.vcxproj", "{269D828C-9D87-30B4-86C1-D895D5071576}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_los", "src\applications\osgearth_los\osgearth_los.vcxproj", "{50D92400-7DC7-3F15-9759-2D0AABD4F302}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_map", "src\applications\osgearth_map\osgearth_map.vcxproj", "{8E01CBCA-B669-354C-8257-BE22900447B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_minimap", "src\applications\osgearth_minimap\osgearth_minimap.vcxproj", "{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_mrt", "src\applications\osgearth_mrt\osgearth_mrt.vcxproj", "{C38560E3-6340-3B8C-BC73-02F2F93777A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_occlusionculling", "src\applications\osgearth_occlusionculling\osgearth_occlusionculling.vcxproj", "{C22889C4-509E-373E-8B9F-12B65BE94B7C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_simple", "src\applications\osgearth_simple\osgearth_simple.vcxproj", "{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_skyview", "src\applications\osgearth_skyview\osgearth_skyview.vcxproj", "{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_terrainprofile", "src\applications\osgearth_terrainprofile\osgearth_terrainprofile.vcxproj", "{5DC160B6-D3F3-345C-A895-FA39F7FB1284}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_tfs", "src\applications\osgearth_tfs\osgearth_tfs.vcxproj", "{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_version", "src\applications\osgearth_version\osgearth_version.vcxproj", "{E7A05055-9C0C-3FF8-8763-244500CE3598}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_video", "src\applications\osgearth_video\osgearth_video.vcxproj", "{ECDE3650-40C5-3758-A2E3-4333B0E85C63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osgearth_viewer", "src\applications\osgearth_viewer\osgearth_viewer.vcxproj", "{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {43689C9B-4850-3A06-A032-A4402EB43304}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg lerc", "src\osgEarthDrivers\lerc\osgdb_lerc.vcxproj", "{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9} = {22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg basis", "src\osgEarthDrivers\basis\osgdb_basis.vcxproj", "{99ABC910-324C-338C-8479-FDB1F4C2C84F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9} = {22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		vs2019_Debug|x64 = vs2019_Debug|x64
+		vs2019_Release|x64 = vs2019_Release|x64
+		vs2022_Debug|x64 = vs2022_Debug|x64
+		vs2022_Release|x64 = vs2022_Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{43689C9B-4850-3A06-A032-A4402EB43304}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2019_Debug|x64.ActiveCfg = vs2019_Debug|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2019_Debug|x64.Build.0 = vs2019_Debug|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2019_Release|x64.ActiveCfg = vs2019_Release|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2019_Release|x64.Build.0 = vs2019_Release|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{7A1594ED-5B59-3669-B610-284310FB94CC}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{CC11983B-E514-30F1-9232-3ED213059AE4}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{55686967-454A-301A-BD01-B6C4072EC047}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{20776C73-D198-3781-A31D-66596F6B2172}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AC9E2322-60AB-3B69-8866-346044ADAC59}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AF56FF47-3736-32B9-B993-A0B0302768BB}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{E5F98775-1D4A-332D-8024-07B793BEF263}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{D266175E-413C-35D3-BB50-F4BC2C948621}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{55D78096-EBF9-326D-BA0E-17D29E56D229}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{269D828C-9D87-30B4-86C1-D895D5071576}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8E01CBCA-B669-354C-8257-BE22900447B0}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{E7A05055-9C0C-3FF8-8763-244500CE3598}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2019_Debug|x64.ActiveCfg = vs2022_Release|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2019_Debug|x64.Build.0 = vs2022_Release|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2019_Release|x64.ActiveCfg = vs2022_Release|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2019_Release|x64.Build.0 = vs2022_Release|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2019_Debug|x64.ActiveCfg = vs2019_Debug|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2019_Debug|x64.Build.0 = vs2019_Debug|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2019_Release|x64.ActiveCfg = vs2019_Release|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2019_Release|x64.Build.0 = vs2019_Release|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2019_Debug|x64.ActiveCfg = vs2019_Debug|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2019_Debug|x64.Build.0 = vs2019_Debug|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2019_Release|x64.ActiveCfg = vs2019_Release|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2019_Release|x64.Build.0 = vs2019_Release|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2022_Debug|x64.ActiveCfg = vs2022_Debug|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2022_Debug|x64.Build.0 = vs2022_Debug|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2022_Release|x64.ActiveCfg = vs2022_Release|x64
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F}.vs2022_Release|x64.Build.0 = vs2022_Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43689C9B-4850-3A06-A032-A4402EB43304} = {D3A7F72B-09B9-35B4-A5C7-DB0FEE99AA9F}
+		{22EFFDA4-2AB9-3239-9DD6-4C2507D516E9} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{4BB8AEA9-CF1A-3A4A-8A0C-81F3873AF9A2} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{3C746FA9-0521-3E5E-B81B-F95B418D24C9} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{7A1594ED-5B59-3669-B610-284310FB94CC} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{5E460A0F-9FF9-3AB0-97ED-541D46C336FF} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{04EDFAB4-D7EF-31C4-881F-4B140C2E83A2} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{3E61CED1-E061-38A5-AD55-3BFB71FE9521} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{9966765E-2EE3-36DE-BFF9-BDB51E5D6F15} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{9B2A8970-E3B5-37F2-84D4-2227C9CCFCAB} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{5264D1F0-AF88-33A5-9F88-63A67EDCBE1C} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{CC11983B-E514-30F1-9232-3ED213059AE4} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{55686967-454A-301A-BD01-B6C4072EC047} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{524C519C-C92F-30A6-A99F-FCB7CE7D0278} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{8D97AED3-98C4-3BA2-B3BB-D6404B29B353} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{20776C73-D198-3781-A31D-66596F6B2172} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{44079631-A13C-38ED-9C63-BFBF7FE6DD74} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{AC9E2322-60AB-3B69-8866-346044ADAC59} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{40FDEC6B-EC12-3E35-A8CE-101DEF78745B} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{CA3FB9DD-EC68-3100-97BD-33CA2E575466} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{58F55128-C91E-3B9D-B1C2-E66AAE24EEF9} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{0DCECD17-2B0E-3C9B-9890-19EE77DF2E05} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{8B97C6C4-5BDA-3DD9-91F0-AE8E42478318} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{AF56FF47-3736-32B9-B993-A0B0302768BB} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{E5F98775-1D4A-332D-8024-07B793BEF263} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{D9EAAC22-B151-35EB-84C2-4BC949FCFF96} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{D266175E-413C-35D3-BB50-F4BC2C948621} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{55D78096-EBF9-326D-BA0E-17D29E56D229} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{CCF4CA84-C35B-3847-8A0D-9F66964EC568} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{AA6F3992-5FB8-34FD-A022-23440C2D1EF6} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{1647E0EA-06FA-3357-A2E0-674DB5EEABA8} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{C3CDC0FA-FA88-36F1-9E50-7374E915173D} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{269D828C-9D87-30B4-86C1-D895D5071576} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{50D92400-7DC7-3F15-9759-2D0AABD4F302} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{8E01CBCA-B669-354C-8257-BE22900447B0} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{BA80F85B-3D02-3E50-93FB-3883C61C4BE8} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{C38560E3-6340-3B8C-BC73-02F2F93777A6} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{C22889C4-509E-373E-8B9F-12B65BE94B7C} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{8C502C4C-340F-39DC-A5F4-469C8FEFE11B} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{34AC7B65-37AA-39C6-8CC0-E49D06ED1744} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{5DC160B6-D3F3-345C-A895-FA39F7FB1284} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{51889B2E-46C3-32E2-9C36-06DA0B08EAA3} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{E7A05055-9C0C-3FF8-8763-244500CE3598} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{ECDE3650-40C5-3758-A2E3-4333B0E85C63} = {77777484-463F-36BD-9B58-13C135B46CAD}
+		{1F186E9C-F653-3E26-9413-1D2E6E41C3A3} = {98803017-58E9-30FB-A0B7-08C00322FA8E}
+		{AE1D0DD0-5F32-33C0-BE4F-E60AD301535A} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+		{99ABC910-324C-338C-8479-FDB1F4C2C84F} = {DDD0AAF6-A51D-3670-A4B7-F13E0030BC71}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFE75A53-0F3A-30E3-95AA-BBA390C0C1B9}
+	EndGlobalSection
+EndGlobal

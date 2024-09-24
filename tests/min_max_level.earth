@@ -1,0 +1,16 @@
+<!--
+This example demonstrates how to use two image sources and switch between them
+at a given levels of detail.
+-->
+
+<map name="Demo: min/max levels">
+
+    <GDALImage name="world-tiff" max_level="6">
+        <url>../data/world.tif</url>
+    </GDALImage>
+    
+    <TMSImage name="readymap_imagery" min_level="6">
+        <url>https://readymap.org/readymap/tiles/1.0.0/7/</url>
+    </TMSImage>
+    
+</map>

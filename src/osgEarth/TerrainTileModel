@@ -1,0 +1,129 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2008-2014 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#pragma once
+
+#include <osgEarth/Common>
+#include <osgEarth/TileKey>
+#include <osgEarth/TextureArena>
+#include <osgEarth/Layer>
+#include <osgEarth/TileMesher>
+#include <osg/Matrix>
+
+namespace osgUtil {
+    class StateToCompile;
+}
+
+namespace osgEarth
+{
+    using namespace Util;
+
+    /**
+     * Data model backing an individual terrain tile.
+     */
+    class OSGEARTH_EXPORT TerrainTileModel : public osg::Referenced
+    {
+    public:
+        struct Tile
+        {
+            int revision = -1;
+            Texture::Ptr texture;
+            osg::Matrixf matrix;
+        };
+
+        struct ColorLayer : public Tile
+        {
+            using Vector = std::vector<ColorLayer>;
+            osg::ref_ptr<Layer> layer;
+        };
+
+        struct Elevation : public Tile
+        {
+            float minHeight = FLT_MAX;
+            float maxHeight = -FLT_MAX;
+            osg::ref_ptr<const osg::HeightField> heightField;
+        };
+
+        struct NormalMap : public Tile
+        {
+            // empty
+        };
+
+        struct LandCover : public ColorLayer
+        {
+            // empty
+        };
+
+    public:
+        //! Create a new empty data model for a tile/revision pair
+        TerrainTileModel(const TileKey& key_, int revision_)  :
+            key(key_), revision(revision_) { }
+
+        //! Tile key corresponding to this model
+        TileKey key;
+
+        //! Map model revision from which this model was created
+        int revision = -1;
+
+        //! Whether some data here requires updates
+        bool requiresUpdateTraversal = false;
+
+        //! Terrain mesh
+        TileMesh mesh;
+
+        //! Imagery and other surface coloring layers
+        ColorLayer::Vector colorLayers;
+
+        //! Indices of shared data layers
+        std::vector<unsigned> sharedLayerIndices;
+
+        //! Elevation data
+        Elevation elevation;
+
+        //! Normal map data
+        NormalMap normalMap;
+
+        //! Land coverage data
+        LandCover landCover;
+
+    public:
+
+        bool empty() const
+        {
+            return
+                mesh.verts == nullptr &&
+                colorLayers.empty() &&
+                elevation.heightField == nullptr;
+        }
+
+        //! Get a texture given a layer ID
+        Texture::Ptr getTexture(UID layerUID) const;
+        const osg::Matrixf& getMatrix(UID layerUID) const;
+
+        //! Populates the output object with things that the
+        //! ICO can pre-compile.
+        //! @param out Where to place objects that need pre-compiling
+        //! @param bindless Whether to treat textures as bindless textures
+        //!   that will be managed by a TextureArena
+        void getStateToCompile(
+            osgUtil::StateToCompile& out,
+            bool bindless,
+            osg::Object* token) const;
+    };
+}
+

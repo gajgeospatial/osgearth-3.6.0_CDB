@@ -1,0 +1,72 @@
+/* -*-c++-*- */
+/* osgEarth - Geospatial SDK for OpenSceneGraph
+ * Copyright 2020 Pelican Mapping
+ * http://osgearth.org
+ *
+ * osgEarth is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+#pragma once
+
+#include <osgEarth/Common>
+#include <osgEarth/URI>
+#include <osgEarth/VisibleLayer>
+
+namespace osgEarth
+{
+    using namespace osgEarth;
+
+    /**
+     * Options governing bump mapping of the terrain.
+     * A Bump Map is a repeating normal texture that modifies the
+     * existing normal vector per fragment.
+     */
+    class BumpMapOptions : public VisibleLayer::Options
+    {
+        META_LayerOptions(osgEarth, BumpMapOptions, VisibleLayer::Options);
+
+    public:
+        //! bump map texture to load.
+        OE_OPTION(URI, imageURI);
+        //! Intensity of normal map effect.
+        OE_OPTION(float, intensity, 1.0f);
+        //! Scale factor for the normal map texture.
+        OE_OPTION(float, scale, 1.0f);
+        //! Number of times to proressively scale and multisample the bump map based on camera range. Default is 1.
+        OE_OPTION(int, octaves, 1);
+        //! Camera range at which to render one octave (outer range).
+        OE_OPTION(float, maxRange, 25000.0f);
+        //! LOD at which the bumpmap renders at a scale of 1.0.
+        OE_OPTION(unsigned, baseLOD, 13u);
+
+        Config getConfig() const {
+            Config conf = ConfigOptions::getConfig();
+            conf.set("image",     _imageURI);
+            conf.set("intensity", _intensity);
+            conf.set("scale",     _scale);
+            conf.set("octaves",   _octaves);
+            conf.set("max_range", _maxRange);
+            conf.set("base_lod",  _baseLOD);
+            return conf;
+        }
+
+        void fromConfig( const Config& conf ) {
+            conf.get("image",     _imageURI);
+            conf.get("intensity", _intensity);
+            conf.get("scale",     _scale);
+            conf.get("octaves",   _octaves);
+            conf.get("max_range", _maxRange);
+            conf.get("base_lod",  _baseLOD);
+        }
+    };
+} // namespace osgEarth

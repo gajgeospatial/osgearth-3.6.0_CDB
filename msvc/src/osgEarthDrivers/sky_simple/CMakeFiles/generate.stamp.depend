@@ -1,0 +1,3 @@
+# CMake generation dependency list for this directory.
+N:/Development/Dev_Base/osgearth-3.6/cmake/ConfigureShaders.cmake.in
+N:/Development/Dev_Base/osgearth-3.6/src/osgEarthDrivers/sky_simple/CMakeLists.txt

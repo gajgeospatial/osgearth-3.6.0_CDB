@@ -1,0 +1,47 @@
+<!--
+osgEarth Sample
+This tests the rendering of features close to the poles.
+-->
+<map name="Test: Feature Pole Tessellation">
+
+    <GDALImage name="world">
+        <url>../data/world.tif</url>
+    </GDALImage>
+
+    <OGRFeatures name="north-geom">
+        <geometry>
+            POLYGON((191.026667 87.63333,114.75 78,89.5 77.333336,81.833336 75.333336,70.683334 74.5,70.916664 73.666664,68.666664 73.666664,66.291664 71.505,57.65 71.166664,58 73.9,48.616665 73,49.198334 71.43,49.5 70.5,43.266666 68.666664,32.083332 71.5,32.083332 74,35 74,35 81,32 81,32 90,191.026667 87.63333))
+        </geometry>
+    </OGRFeatures>
+
+    <FeatureModel name="North polar polygon" features="north-geom">
+        <styles>
+            <style type="text/css">
+                default {
+                   fill: #ff00ff6f;
+                   stroke: #ffffff;  
+                   altitude-clamping: terrain-drape;
+                }                    
+            </style>
+        </styles>        
+    </FeatureModel>
+    
+    <OGRFeatures name="south-geom">
+        <geometry>
+            POLYGON((191.026667 -87.63333,114.75 -78,89.5 -77.333336,81.833336 -75.333336,70.683334 -74.5,70.916664 -73.666664,68.666664 -73.666664,66.291664 -71.505,57.65 -71.166664,58 -73.9,48.616665 -73,49.198334 -71.43,49.5 -70.5,43.266666 -68.666664,32.083332 -71.5,32.083332 -74,35 -74,35 -81,32 -81,32 -90,191.026667 -87.63333))
+        </geometry>
+    </OGRFeatures>
+
+    <FeatureModel name="South polar polygon" features="south-geom">
+        <styles>
+            <style type="text/css">
+                default {
+                   fill: #ff00ff6f;
+                   stroke: #ffffff;
+                   altitude-clamping: terrain-drape;
+                }                    
+            </style>
+        </styles>
+    </FeatureModel>
+  
+</map>
